@@ -18,7 +18,7 @@ jobs:
           if [ -d "monorepo.template" ]; then ls -l monorepo.template; fi
       - uses: pnpm/action-setup@v4
         with:
-          version: 8
+          version: 10.8.0
       - uses: actions/setup-node@v4
         with:
           node-version: 20
