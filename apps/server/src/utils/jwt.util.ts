@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import jwt, { JsonWebTokenError, TokenExpiredError } from 'jsonwebtoken';
-import { config } from '../../config/default';
 import { logger } from './logger';
+import {config} from '../../config/default';
 const { accessTokenPrivateKey, accessTokenPublicKey } = config;
 
 export function signJwt(object: object, options?: jwt.SignOptions | undefined) {

@@ -23,6 +23,8 @@ jobs:
         with:
           node-version: 20
           cache: 'pnpm'
+      - name: Setup config for CI
+        run: cp apps/server/config/default.example.ts apps/server/config/default.ts
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Lint

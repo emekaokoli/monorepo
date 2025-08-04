@@ -138,3 +138,5 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 /packages/config/default.ts
+/apps/server/config/default.ts
+apps/server/config/default.ts
