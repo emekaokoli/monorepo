@@ -16,6 +16,6 @@
     "simple-git-hooks": "^2.9.0"
   },
   "simple-git-hooks": {
-    "pre-commit": "node scripts/check-deps.js"
+    "pre-commit": "pnpm lint && node scripts/check-deps.js"
   }
 }
