@@ -15,7 +15,7 @@
         "../../packages/config/*"
       ],
       "@utils/*": [
-        "../../packages/utils/*"
+        "src/utils/*"
       ],
       "@types/*": [
         "../../packages/types/*"

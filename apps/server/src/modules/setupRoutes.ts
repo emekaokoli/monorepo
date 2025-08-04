@@ -1,5 +1,5 @@
+import { ResponseBuilder } from '@/utils/responseBuilder';
 import { Response, type Application } from 'express';
-import { ResponseBuilder } from '../../../../packages/utils/responseBuilder';
 import { router as AppRoutes } from '../routes';
 
 export const setUpRoutes = (app: Application) => {
@@ -10,6 +10,10 @@ export const setUpRoutes = (app: Application) => {
   app.use('/api/v1/', AppRoutes);
 
   app.use('/*splat', (_, res) => {
-		ResponseBuilder.failure(res, 404, 'It seems you are lost 😉, Route does not exit');
-	});
+    ResponseBuilder.failure(
+      res,
+      404,
+      'It seems you are lost 😉, Route does not exit'
+    );
+  });
 };

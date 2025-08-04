@@ -1,10 +1,10 @@
 
-import { DomainError } from '@packages/utils/error';
-import { ResponseBuilder } from '@packages/utils/responseBuilder';
-import { type ErrorRequestHandler, type NextFunction, type Request, type Response } from 'express';
+import { DomainError } from '@/utils/error';
+import { ResponseBuilder } from '@/utils/responseBuilder';
+import { type ErrorRequestHandler, type Request, type Response } from 'express';
 
 export function errorHandler(): ErrorRequestHandler {
-	return (err: Error, _req: Request, res: Response, _next: NextFunction) => {
+	return (err: Error, _req: Request, res: Response) => {
 		if (err instanceof DomainError) {
 			return ResponseBuilder.failure(res, err.statusCode, err.message);
 		}

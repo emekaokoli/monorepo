@@ -6,6 +6,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 
 // Import the generated route tree
+import App from './App'
 import { routeTree } from './routeTree.gen'
 
 // Create a new router instance
@@ -26,8 +27,9 @@ const queryClient = new QueryClient()
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <QueryClientProvider client={queryClient}>
+      <App />
       <RouterProvider router={router} />
+      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
-    <ReactQueryDevtools initialIsOpen={false} />
   </StrictMode>,
 )
