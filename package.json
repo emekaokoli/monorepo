@@ -9,10 +9,13 @@
     "test": "pnpm -r run test",
     "typecheck": "pnpm -r run typecheck",
     "dev": "concurrently -k -r -n server,web -c blue,magenta \"pnpm --filter server dev\" \"pnpm --filter web dev\"",
-    "prepare": "husky install"
+    "prepare": "simple-git-hooks"
   },
   "devDependencies": {
     "concurrently": "^8.2.2",
-    "husky": "^9.0.11"
+    "simple-git-hooks": "^2.9.0"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "node scripts/check-deps.js"
   }
 }

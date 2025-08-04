@@ -40,6 +40,7 @@
     "@tanstack/eslint-plugin-query": "^5.83.1",
     "@tanstack/react-query-devtools": "^5.84.1",
     "@tanstack/react-router-devtools": "^1.130.10",
+    "@tanstack/router-plugin": "^1.130.15",
     "@tanstack/router-vite-plugin": "^1.130.10",
     "@types/node": "^24.1.0",
     "@types/react": "^19.1.8",
