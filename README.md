@@ -28,4 +28,5 @@ A simple preconfigured mono-repo template to help me kickstart a full-stack Reac
 - ts-node
 - nodemailer
 - zod-to-openapi
+- express-rate-limit
 

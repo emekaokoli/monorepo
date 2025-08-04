@@ -1,0 +1,39 @@
+{
+  "extends": "../../packages/config/tsconfig.base.json",
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "commonjs",
+    "baseUrl": ".", // root of server/web project
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+      "@packages/*": [
+        "../../packages/*"
+      ],
+      "@config/*": [
+        "../../packages/config/*"
+      ],
+      "@utils/*": [
+        "../../packages/utils/*"
+      ],
+      "@types/*": [
+        "../../packages/types/*"
+      ],
+      "@db/*": [
+        "../../packages/db/*"
+      ],
+      "@templates/*": [
+        "../../packages/templates/*"
+      ]
+    },
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "include": [
+    "src",
+    "../../packages/**/*.ts"
+  ]
+}

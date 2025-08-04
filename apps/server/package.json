@@ -1,13 +1,59 @@
 {
-  "name": "server",
+  "name": "@apps/server",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "ts-node-dev --respawn src/server.ts",
+    "build": "tsc",
+    "lint": "eslint . --ext .ts",
+    "lint-fix": "eslint . --ext .ts --fix",
+    "migrate": "knex migrate:latest",
+    "rollback": "knex migrate:rollback",
+    "seed": "knex seed:run",
+    "migrate:prod": "knex --knexfile dist/src/database/knexfile.js migrate:latest",
+    "seed:prod": "knex --knexfile dist/src/database/knexfile.js seed:run",
+    "start": "node dist/src/index.js",
+    "typecheck": "tsc --noEmit",
+    "test": "echo \"No tests yet\"",
+    "start:pm2": "pm2 start dist/src/index.js --name server",
+    "dev:pm2": "pm2 start src/server.ts --name server --interpreter ./node_modules/.bin/ts-node-dev --watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "packageManager": "pnpm@10.8.0"
+  "packageManager": "pnpm@10.8.0",
+  "dependencies": {
+    "@asteasolutions/zod-to-openapi": "^8.0.0",
+    "axios": "^1.11.0",
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "daysjs": "^1.0.2",
+    "dotenv": "^17.2.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.3",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.0.1",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "knex": "^3.1.0",
+    "node-cron": "^4.2.1",
+    "pg": "^8.16.3",
+    "pino": "^9.7.0",
+    "pino-http": "^10.5.0",
+    "pino-pretty": "^13.1.1",
+    "rollbar": "^2.26.4",
+    "zod": "^4.0.14"
+  },
+  "devDependencies": {
+    "pm2": "^5.3.0",
+    "@total-typescript/ts-reset": "^0.6.1",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.1.0",
+    "@types/nodemailer": "^6.4.17",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.9.2"
+  }
 }
