@@ -11,6 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Print root directory
+        run: ls -l
+      - name: Print monorepo.template directory (if exists)
+        run: |
+          if [ -d "monorepo.template" ]; then ls -l monorepo.template; fi
       - uses: pnpm/action-setup@v4
         with:
           version: 8
@@ -18,8 +23,13 @@ jobs:
         with:
           node-version: 20
           cache: 'pnpm'
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm lint
-      - run: pnpm typecheck
-      - run: pnpm build
-      - run: pnpm test
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Lint
+        run: pnpm lint
+      - name: Typecheck
+        run: pnpm typecheck
+      - name: Build
+        run: pnpm build
+      - name: Test
+        run: pnpm test
