@@ -25,16 +25,11 @@ jobs:
           cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-        working-directory: monorepo.template
       - name: Lint
         run: pnpm lint
-        working-directory: monorepo.template
       - name: Typecheck
         run: pnpm typecheck
-        working-directory: monorepo.template
       - name: Build
         run: pnpm build
-        working-directory: monorepo.template
       - name: Test
         run: pnpm test
-        working-directory: monorepo.template
